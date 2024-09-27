@@ -99,6 +99,7 @@ void vma_set_page_prot(struct vm_area_struct *vma)
 	/* remove_protection_ptes reads vma->vm_page_prot without mmap_lock */
 	WRITE_ONCE(vma->vm_page_prot, vm_page_prot);
 }
+EXPORT_SYMBOL_GPL(vma_set_page_prot);
 
 /*
  * Requires inode->i_mapping->i_mmap_rwsem

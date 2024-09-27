@@ -24,6 +24,7 @@ void pgd_clear_bad(pgd_t *pgd)
 	pgd_ERROR(*pgd);
 	pgd_clear(pgd);
 }
+EXPORT_SYMBOL_GPL(pgd_clear_bad);
 
 #ifndef __PAGETABLE_P4D_FOLDED
 void p4d_clear_bad(p4d_t *p4d)
@@ -31,6 +32,7 @@ void p4d_clear_bad(p4d_t *p4d)
 	p4d_ERROR(*p4d);
 	p4d_clear(p4d);
 }
+EXPORT_SYMBOL_GPL(p4d_clear_bad);
 #endif
 
 #ifndef __PAGETABLE_PUD_FOLDED
@@ -200,6 +202,7 @@ pmd_t pmdp_invalidate(struct vm_area_struct *vma, unsigned long address,
 	flush_pmd_tlb_range(vma, address, address + HPAGE_PMD_SIZE);
 	return old;
 }
+EXPORT_SYMBOL_GPL(pmdp_invalidate);
 #endif
 
 #ifndef __HAVE_ARCH_PMDP_INVALIDATE_AD

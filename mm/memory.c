@@ -681,6 +681,7 @@ struct folio *vm_normal_folio(struct vm_area_struct *vma, unsigned long addr,
 		return page_folio(page);
 	return NULL;
 }
+EXPORT_SYMBOL_GPL(vm_normal_folio);
 
 #ifdef CONFIG_TRANSPARENT_HUGEPAGE
 struct page *vm_normal_page_pmd(struct vm_area_struct *vma, unsigned long addr,
